@@ -12,7 +12,7 @@ Gem::Specification.new do |spec|
 
   spec.summary       = 'Omniauth::Ms365'
   spec.description   = 'Omniauth::Ms365'
-  spec.homepage      = 'https://github.com/andiskiy/omniauth-ms365'
+  spec.homepage      = 'https://github.com/potokk/omniauth-ms365'
   spec.license       = 'MIT'
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
@@ -21,8 +21,8 @@ Gem::Specification.new do |spec|
     spec.metadata['allowed_push_host'] = "TODO: Set to 'http://mygemserver.com'"
 
     spec.metadata['homepage_uri'] = spec.homepage
-    spec.metadata['source_code_uri'] = 'https://github.com/andiskiy/omniauth-ms365'
-    spec.metadata['changelog_uri'] = 'https://github.com/andiskiy/omniauth-ms365'
+    spec.metadata['source_code_uri'] = 'https://github.com/potokk/omniauth-ms365'
+    spec.metadata['changelog_uri'] = 'https://github.com/potokk/omniauth-ms365'
   else
     raise 'RubyGems 2.0 or newer is required to protect against ' \
       'public gem pushes.'
