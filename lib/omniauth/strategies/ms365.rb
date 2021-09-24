@@ -15,11 +15,11 @@ module OmniAuth
       option :name, 'ms365'
 
       option :client_options,
-             site: 'https://www.microsoft.com/',
-             token_url: 'https://login.microsoftonline.com/common/oauth2/v2.0/token',
-             authorize_url: 'https://login.microsoftonline.com/common/oauth2/v2.0/authorize'
+             site: 'https://login.microsoftonline.com',
+             token_url: '/common/oauth2/v2.0/token',
+             authorize_url: '/common/oauth2/v2.0/authorize'
 
-      option :authorize_options, %i[scope display]
+      option :authorize_options, %i[scope]
 
       option :redirect_url, nil
 
