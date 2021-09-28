@@ -10,7 +10,7 @@ module OmniAuth
 
       API_VERSION = '2.0'
 
-      DEFAULT_SCOPE = ''
+      DEFAULT_SCOPE = 'openid email profile offline_access user.read mailboxsettings.read'
 
       option :name, 'ms365'
 
@@ -23,10 +23,29 @@ module OmniAuth
 
       option :redirect_url, nil
 
+      info { raw_info }
+
+      uid { raw_info['id'] }
+
       private
+
+      def authorize_params
+        super.tap do |params|
+          params[:scope] = "#{request.params['scope']} #{DEFAULT_SCOPE}"
+        end
+      end
+
+      def raw_info
+        @raw_info ||= access_token.get(current_user_url).parsed
+      end
 
       def callback_url
         options.redirect_url || (full_host + script_name + callback_path)
+      end
+
+      def current_user_url
+        'https://graph.microsoft.com/v1.0/me?'\
+        '$select=displayName,mail,mailboxSettings,userPrincipalName'
       end
     end
   end
